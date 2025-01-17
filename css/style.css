@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.header{
+    display: flex;
+    position: fixed;
+    top:5px;
+    z-index: 1000;
+    
+}
+input{
+    font-size: clamp(10px,2vw,15px);
+}
+.main{
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-right: 10px;
+    /* left: 5vw; */
+    
+    gap: 10px;
+}
+/* Button {prev _ next} */
+.button{
+    width: 3vw;
+    height: 3vw;
+    top: calc(50% - 20px);
+    border-radius: 5px;
+    transition: transform 0.5s;
+    position: absolute;
+}
+.btnPrev{
+    background: url("../images/prevButton.png") no-repeat center;
+    background-size: 80%;
+    background-color: #9a9a9a7d;
+    opacity: 7;
+    left: 10px;
+    grid-area: left;
+    display: none;
+}
+.btnNext{
+    background: url("../images/nextButton.png") no-repeat center;
+    background-size: 80%;
+    background-color: #9a9a9a7d;
+    opacity: 7;
+    right: 10px;
+    grid-area: right;
+    display: none;
+}
+/* Book_ViewProfile */
+
+.book_container{
+    max-width: 1400px;
+    max-height: 916px;
+    width: 100%;
+    margin: 15px 0 15px 0;
+    /* width: 80vw; */
+    position: relative;
+    display: grid;
+    justify-content: center; 
+    align-items: center;
+    vertical-align: middle;
+    
+   
+}
+.Book_ViewProfile{
+    /* margin: 15px;*/
+    width: 80vw;
+    height: 80vh;
+    /*height: 90vh; */
+    transform-style: preserve-3d;
+    transition: margin-left 900ms;
+    align-items: center;
+    grid-area: main;
+    margin-left: 0 !important;
+    /*box-shadow: 15px 0px 15px rgba(0, 0, 0, 0.5); /* Tạo bóng đổ */
+    /*border-radius: 10px; /*Tạo góc bo tròn*/
+}
+
+
+/* Page book */
+.page_book{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+/* Page flip effect */
+.flipped .front,.flipped .back{
+    
+    transform: rotateY(-180deg);
+}
+/* page sort */
+#page1{
+    z-index: 2;
+}
+/* #page2{
+    z-index: 29;
+}
+#page3{
+    z-index: 28;
+}
+#page4{
+    z-index: 27;
+} */
+ .page_book{
+    /* z-index: 0; */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+ }
+/* Front Back (mặt trước, mặt sau) */
+.front,.back{
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+
+    
+}
+.front{
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: solid 1px black;
+}
+.back{
+    z-index: 0;
+}
+/* Front Back Content */
+.front_content,.back_content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px;
+   
+}
+.back_content{
+    transform:rotateY(180deg) ;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+/* .turn-page-wrapper {
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    
+} */
+
+/* Kiểu dáng cho các trang của flipbook */
+.turn-page-wrapper {
+    transition: box-shadow 0.3s ease; /* Hiệu ứng mượt mà khi thay đổi bóng */
+}
+
+/* Khi trang đang quay, tạo bóng rõ hơn */
+.turn-page-wrapper.turnjs-flipping {
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3); /* Bóng khi trang đang quay */
+}
+
+/* Bóng mặc định cho các trang */
+.turn-page-wrapper {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* Bóng nhẹ cho các trang khi đứng yên */
+}
+.page.turning::before {
+    width: 50%; /* Bóng đổ chỉ ở nửa trái trang */
+    height: 100%;
+    box-shadow: -10px 0px 30px rgba(0, 0, 0, 0.7); /* Bóng đổ bên trái */
+    z-index: 10; /* Đảm bảo bóng đổ hiển thị trên trang */
+}
+
+/* Khi trang lật sang phải, bóng đổ sẽ xuất hiện ở bên phải */
+.page.turning-right::before {
+    width: 50%; /* Bóng đổ chỉ ở nửa phải trang */
+    height: 100%;
+    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.7); /* Bóng đổ bên phải */
+    z-index: 10; /* Đảm bảo bóng đổ hiển thị trên trang */
+}
+.page{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    
+}

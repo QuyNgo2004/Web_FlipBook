@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn.js Flipbook với Zoom</title>
+    <link href="https://cdn.jsdelivr.net/npm/turn.js@4.1.0/dist/turn.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        #flipbook {
+            width: 1000px;
+            height: 600px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .zoom-controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .zoom-button {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .zoom-button:active {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div id="flipbook">
+    <div>
+        <img src="https://turnjs.com/samples/magazine/img/page-1.jpg" />
+    </div>
+    <div>
+        <img src="https://turnjs.com/samples/magazine/img/page-2.jpg" />
+    </div>
+    <div>
+        <img src="https://turnjs.com/samples/magazine/img/page-3.jpg" />
+    </div>
+    <div>
+        <img src="https://turnjs.com/samples/magazine/img/page-4.jpg" />
+    </div>
+</div>
+
+<div class="zoom-controls">
+    <button class="zoom-button" onclick="zoomIn()">Phóng to</button>
+    <button class="zoom-button" onclick="zoomOut()">Thu nhỏ</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/turn.js@4.1.0/dist/turn.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Khởi tạo flipbook
+        $('#flipbook').turn({
+            width: 1000,
+            height: 600,
+            autoCenter: true
+        });
+
+        let zoomLevel = 1; // Tỷ lệ zoom ban đầu
+        const maxZoom = 3; // Tỷ lệ zoom tối đa
+        const minZoom = 0.5; // Tỷ lệ zoom tối thiểu
+
+        // Phóng to
+        function zoomIn() {
+            if (zoomLevel < maxZoom) {
+                zoomLevel += 0.2; // Tăng tỷ lệ zoom
+                applyZoom();
+            }
+        }
+
+        // Thu nhỏ
+        function zoomOut() {
+            if (zoomLevel > minZoom) {
+                zoomLevel -= 0.2; // Giảm tỷ lệ zoom
+                applyZoom();
+            }
+        }
+
+        // Cập nhật tỷ lệ zoom
+        function applyZoom() {
+            $('#flipbook').turn('size', 1000 * zoomLevel, 600 * zoomLevel);
+        }
+
+        // Gắn các sự kiện cho các nút zoom
+        window.zoomIn = zoomIn;
+        window.zoomOut = zoomOut;
+
+        // Cách xử lý zoom bằng cuộn chuột (optional)
+        $('#flipbook').on('wheel', function(e) {
+            if (e.originalEvent.deltaY > 0) {
+                zoomOut();
+            } else {
+                zoomIn();
+            }
+            e.preventDefault();
+        });
+    });
+</script>
+
+</body>
+</html>

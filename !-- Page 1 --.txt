@@ -1,0 +1,75 @@
+<!-- Page 1 -->
+          <div class="page_book" id="page1">
+            <!-- Front (mắt trước) -->
+             <div class="front">
+                <div class="front_content"id="f1"> 
+                  <img src="./images/page1_f.webp" alt="">
+                </div>
+             </div>
+             <!-- Back (mặt sau) -->
+              <div class="back">
+                <div class="back_content" id="b1">
+                  <img src="./images/page1_b.webp" alt="">
+                </div>
+              </div>
+          </div>
+           <!-- Page 2 -->
+           <div class="page_book" id="page2">
+            <!-- Front (mắt trước) -->
+             <div class="front">
+                <div class="front_content"  id="f2" > 
+                  <img src="./images/page2_f.webp" alt="">
+                </div>
+             </div>
+             <!-- Back (mặt sau) -->
+              <div class="back">
+                <div class="back_content" id="b2" > 
+                  <img src="./images/page2_b.webp" alt="">
+                </div>
+              </div>
+          </div>
+          <!-- Page 3 -->
+          <div class="page_book" id="page3">
+            <!-- Front (mắt trước) -->
+             <div class="front">
+                <div class="front_content"  id="f2" > 
+                  <img src="./images/page3_f.webp" alt="">
+                </div>
+             </div>
+             <!-- Back (mặt sau) -->
+              <div class="back">
+                <div class="back_content" id="b2" > 
+                  <img src="./images/page3_b.webp" alt="">
+                </div>
+              </div>
+          </div>
+          <!-- Page 4 -->
+          <div class="page_book" id="page4">
+            <!-- Front (mắt trước) -->
+             <div class="front">
+                <div class="front_content"  id="f2" > 
+                  <img src="./images/page4_f.webp" alt="">
+                </div>
+             </div> 
+             <!-- Back (mặt sau)-->
+               <div class="back">
+                <div class="back_content" id="b2" > 
+                  <img src="./images/page4_b.webp" alt="">
+                </div>
+              </div>
+          </div>
+          <!-- Page 5 -->
+          <div class="page_book" id="page5">
+            <!-- Front (mắt trước) -->
+             <div class="front">
+                <div class="front_content"  id="f2" > 
+                  <img src="./images/page5_f.webp" alt="">
+                </div>
+             </div>
+             <!-- Back (mặt sau) -->
+              <div class="back">
+                <div class="back_content" id="b2" > 
+                  <img src="./images/page5_b.webp" alt="">
+                </div>
+              </div>
+          </div> 

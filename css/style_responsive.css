@@ -1,0 +1,91 @@
+/* @media (max-width: 320px){
+    .Book_ViewProfile{
+        margin: 5px;
+        max-width: 1209px;
+        width: 100vw;
+        height: 90vh;
+    }
+}
+@media (max-width: 480px){
+    .Book_ViewProfile{
+        margin: 5px;
+        max-width: 1209px;
+        width: 100vw;
+        height: 90vh;
+    }
+}
+@media (max-width: 660px){
+    .Book_ViewProfile{
+        margin: 5px;
+        max-width: 1209px;
+        width: 100vw;
+        height: 90vh;
+    }
+}
+@media (max-width: 800px){
+    .Book_ViewProfile{
+        margin: 15px;
+        max-width: 1209px;
+        width: 100vw;
+        height: 90vh;
+    }
+}
+@media (max-width: 768px){
+    .Book_ViewProfile{
+        margin: 15px;
+        max-width: 1209px;
+        width: 100vw;
+        height: 90vh;
+    }
+}
+@media (max-width: 1024px){
+    .Book_ViewProfile{
+        width: 80vw;
+        height: 80vw - 293px;
+    }
+}
+@media (max-width: 1400px){
+    .Book_ViewProfile{
+        width: 80vw;
+        height: 90vh;
+
+    }
+}
+@media (min-width: 1400px){
+    .Book_ViewProfile{
+        width: 100vw;
+        height: 90vh;
+    }
+    .book_container{
+        width: 100vw;
+        height: 100vh;
+    }
+
+} */
+@media (max-width: 820px){
+    body{
+        display: block;
+        text-align: center;
+        align-content: center;
+    }
+    .header{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main{
+        display: contents;
+    }
+    .button{
+        position: static;
+        width: 5vw;
+        height: 5vw;
+    }
+    .loaderContainer{
+        width: 100%;
+        top: 40%;
+        justify-items: center;
+    }
+   
+} 
